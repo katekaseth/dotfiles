@@ -156,5 +156,6 @@ alias docs="cd ~/Documents"
 alias packlist="vim ~/.config/packages.txt"
 alias p4="cd ~/Documents/INFO340/problem-04-katekaseth"
 alias proj="cd ~/Documents/INFO340/project-katekaseth"
+alias gpass="git config credential.helper store"
 
 echo "What's up Teko!"
