@@ -293,7 +293,7 @@ label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = sleep
+menu-0-0 = hibernate 
 menu-0-0-exec = systemctl hibernate
 menu-0-1 = power off
 menu-0-1-exec = systemctl poweroff

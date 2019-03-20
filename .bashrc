@@ -82,11 +82,13 @@ if ${use_color} ; then
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1='\u@\h \W \$ '
+		PS1='\u:\W \$ '
 	else
-		PS1='\u@\h \w \$ '
+		PS1='\u:\w \$ '
 	fi
 fi
+
+PS1="\[\e[01;32m\]\u\[\e[38;5;24m\] \[\e[38;5;30m\]\W\[\e[01;32m\] > \[$(tput sgr0)\]"
 
 unset use_color safe_term match_lhs sh
 
@@ -141,7 +143,7 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
-# shortcuts
+# aliases
 alias bashp="vim ~/.bashrc"
 alias ga="git add ."
 alias gs="git status"
@@ -151,11 +153,27 @@ alias gc="git commit -m"
 alias rosetta="cd ~/Documents/Rosetta/rosetta_src_2018.33.60351_bundle"
 alias labj="cd ~/Documents/labjournal"
 alias i3c="vim ~/.config/i3/config"
+alias polyc="vim ~/.config/polybar/config"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias packlist="vim ~/.config/packages.txt"
-alias p4="cd ~/Documents/INFO340/problem-04-katekaseth"
-alias proj="cd ~/Documents/INFO340/project-katekaseth"
+alias 340="cd ~/Documents/INFO340"
+alias 370="cd ~/Documents/INFO370"
 alias gpass="git config credential.helper store"
 
-echo "What's up Teko!"
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/kateka/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/kateka/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kateka/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/kateka/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
