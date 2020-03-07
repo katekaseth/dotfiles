@@ -4,6 +4,11 @@
 
 [[ $- != *i* ]] && return
 
+echo "Behbeh? You are...amazing <3"
+export MYSQL_ROOT_PASSWORD="password"
+
+alias flux="xflux -l 47.606209 -g -122.332069"
+
 colors() {
 	local fgc bgc vals seq0
 
@@ -143,6 +148,12 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
+# to use GO
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+# export ADDR=localhost:4000
+
 # aliases
 alias bashp="vim ~/.bashrc"
 alias ga="git add ."
@@ -150,16 +161,23 @@ alias gs="git status"
 alias gp="git push"
 alias gl="git pull"
 alias gc="git commit -m"
-alias rosetta="cd ~/Documents/Rosetta/rosetta_src_2018.33.60351_bundle"
-alias labj="cd ~/Documents/labjournal"
 alias i3c="vim ~/.config/i3/config"
 alias polyc="vim ~/.config/polybar/config"
 alias dl="cd ~/Downloads"
 alias docs="cd ~/Documents"
 alias packlist="vim ~/.config/packages.txt"
-alias 340="cd ~/Documents/INFO340"
-alias 370="cd ~/Documents/INFO370"
 alias gpass="git config credential.helper store"
+alias jp="conda activate base && jupyter-notebook"
+alias hd1="xrandr --output DP1 --auto"
+alias hd2="xrandr --output DP2 --auto"
+alias al="alsamixer"
+alias ds="sudo systemctl start docker.service"
+alias gobuild="CGO_ENABLED=0 go build"
+alias aws1="ssh ec2-user@ec2-52-38-204-46.us-west-2.compute.amazonaws.com"
+alias b1="xbacklight -set 1"
+
+# change some commands
+alias rm="rm -i"
 
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
@@ -177,3 +195,21 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+# added by Anaconda3 2018.12 installer
+# >>> conda init >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/kateka/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    \eval "$__conda_setup"
+else
+    if [ -f "/home/kateka/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/kateka/anaconda3/etc/profile.d/conda.sh"
+        CONDA_CHANGEPS1=false conda activate base
+    else
+        \export PATH="/home/kateka/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda init <<<
+
+export RSTUDIO_PANDOC=/usr/lib/rstudio/bin/pandoc

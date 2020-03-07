@@ -1,7 +1,7 @@
 rofi.lines: 4
 rofi.eh: 2
 rofi.width: 50
-rofi.padding: 600
+rofi.padding: 300 
 rofi.fullscreen: true
 rofi.location: 0
 rofi.bw: 0
@@ -15,4 +15,3 @@ rofi.color-normal: argb:002f343f, #d8dee8, argb:00000000,  argb:002f343f,  #36d7
 rofi.color-active: #2f343f, #b48ead, #2f343f, #2f343f, #93e5cc
 rofi.color-urgent: #2f343f, #ebcb8b, #2f343f, #2f343f, #ebcb8b
 
-rofi.font: System San Francisco Display 18
